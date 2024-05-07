@@ -1,0 +1,103 @@
+﻿
+@{
+    ViewBag.Title = "ScheduleIndex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Content/Pages/Schedule.js"></script>
+<section class="section faq">
+    <div class="row">
+        <div class="col-lg-6">
+
+            <div class="card basic">
+                <div class="card-body">
+                    <h5 class="card-title">Generate Schedule</h5>
+                    <form class="row g-3">
+                        <div class="col-md-12">
+                            <div class="form-floating">
+                                <input type="hidden" class="form-control" id="" placeholder="Title">
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="" placeholder="Title">
+                                <label for="floatingName">Title</label>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-floating">
+                                <textarea class="form-control" id="" placeholder="Description"></textarea>
+                                <label for="floatingName">Description</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="date" class="form-control" id="" placeholder="date">
+                                <label for="floatingName">Start Date</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="date" class="form-control" id="" placeholder="date">
+                                <label for="floatingName">Due Date</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="time" class="form-control" id="" placeholder="time">
+                                <label for="floatingName">Start Time</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="time" class="form-control" id="" placeholder="time">
+                                <label for="floatingName">Due Time</label>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <input type="checkbox" id="" />
+                            <label>  Is Active</label>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-floating">
+                                <input type="hidden" class="form-control" id="" placeholder="Title">
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary" onclick="()">Submit</button>
+                            <button type="reset" class="btn btn-secondary">Reset</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+
+        </div>
+        <div class="col-lg-6">
+            <div class="table-responsive">
+                <table id="tblReg" class="table table-bordered table-hover table-striped" style="width:100%;">
+                    <thead class="text-white bg-dark">
+                        <tr>
+
+                            <td class="text-white bg-dark">Title</td>
+                            <td class="text-white bg-dark">Start Date</td>
+                            <td class="text-white bg-dark">Due Date</td>
+                            <td class="text-white bg-dark">Start Time</td>
+                            <td class="text-white bg-dark">Due Time</td>
+                            <td class="text-white bg-dark"></td>
+
+                        </tr>
+
+                    </thead>
+                    <tbody> </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6a031711b7fb41c5b514b1ddf03f4087" Name="Diagram1">
+        <EntityTypeShape EntityType="GymModel.tblAccount" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GymModel.tblOrganization" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GymModel.tblPackage" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GymModel.tblSubscripation" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GymModel.tblUser" Width="1.5" PointX="0.75" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="GymModel.tblReg" Width="1.5" PointX="5.375" PointY="4.75" />
+        <EntityTypeShape EntityType="GymModel.tblEvent" Width="1.5" PointX="7.375" PointY="4.75" />
+        <EntityTypeShape EntityType="GymModel.tblNotice" Width="1.5" PointX="3.375" PointY="8.75" />
+        <EntityTypeShape EntityType="GymModel.tblOffer" Width="1.5" PointX="5.375" PointY="8.75" />
+        <EntityTypeShape EntityType="GymModel.tblSchedule" Width="1.5" PointX="7.375" PointY="8.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

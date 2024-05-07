@@ -1,0 +1,183 @@
+﻿
+@{
+    ViewBag.Title = "RegistationListIndex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .dataTables_filter {
+        margin-bottom: 10px;
+    }
+</style>
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Content/Pages/Registration.js"></script>
+
+
+<section>
+    <div>
+        <div class="card p-3">
+
+            @*<div class="row my-2 mt-1">
+                    <div class="col-md-12 text-end">
+                        <button class="btn btn-info" onclick="AddEvent()"><i class="fa fa-user-circle"></i> &nbsp;Book Event</button>
+                    </div>
+                </div>*@
+
+            <div class="table-responsive">
+                <table id="tblReg" class="table table-bordered table-hover table-striped" style="width:100%;">
+                    <thead class="text-white bg-dark">
+                        <tr>
+
+                            <td class="text-white bg-dark">Full Name</td>
+                            <td class="text-white bg-dark">Mobile</td>
+                            @*<td class="text-white bg-dark">Photo</td>*@
+                            <td class="text-white bg-dark">Plan</td>
+                            <td class="text-white bg-dark">Start Date</td>
+                            <td class="text-white bg-dark">Due Date</td>
+                            <td class="text-white bg-dark">Address</td>
+                            <td class="text-white bg-dark"></td>
+
+                        </tr>
+                    </thead>
+                    <tbody> </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="UpdateModal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <!--<div class="modal-header">
+                    <button type="button" class="close" data-bs-dismiss="modal">&times;</button>
+                    <h4 class="modal-title" w-100">Register Detail </h4>-->
+                    @*@<center><h4 class="modal-title">Modal Header</h4></center>@*@
+                <!--</div>-->
+                <div class="modal-body">
+                    <form class="row g-3">
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="hidden" id="hdnReg_Id" />
+                                <input type="text" class="form-control" id="txtFull_Name" placeholder="Full Name">
+                                <label for="floatingName">Name</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="txtMobile" placeholder="Mobile">
+                                <label for="floatingMobile">Mobile</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="file" class="form-control" id="File1" placeholder="Photo">
+                                <label for="floatingPhoto">Photo</label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="col-md-12">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="txtPlan" placeholder="Plan">
+                                    <label for="floatingPlan">Plan</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="col-md-12">
+                                <div class="form-floating">
+                                    <input type="date" class="form-control" id="txtStartDate" placeholder="Start Date">
+                                    <label for="floatingStartDate">Start Date</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="col-md-12">
+                                <div class="form-floating">
+                                    <input type="date" class="form-control" id="txtDueDate" placeholder="Due Date">
+                                    <label for="floatingDueDate">DueDate</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <textarea class="form-control" placeholder="Address" id="txtAddress"></textarea>
+                                <label for="floatingtextarea">Address</label>
+                            </div>
+                        </div>
+                        @*<div class="col-md-4">
+                                <div class="form-floating mb-3">
+                                    <select class="form-select" id="floatingSelect" aria-label="State">
+                                        <option selected>New York</option>
+                                        <option value="1">Oregon</option>
+                                        <option value="2">DC</option>
+                                    </select>
+                                    <label for="floatingSelect">State</label>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="floatingZip" placeholder="Zip">
+                                    <label for="floatingZip">Zip</label>
+                                </div>
+                            </div>*@
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary" onclick="SaveRegistration()">Submit</button>
+                            <button type="reset" class="btn btn-secondary">Reset</button>
+                        </div>
+                    </form><!-- End floating Labels Form -->
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div id="SubscriptionModal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <!-- Modal content-->
+            <div class="modal-content">
+                @*<div class="modal-header">
+
+                    <center><h4 class="modal-title" w-100">OrgSoft</h4></center>
+
+                </div>*@
+                <div class="modal-body">
+                    <h5 class="card-title">Subscription Details</h5>
+                    <div class="card-body" id="SubscriptionDetails">
+
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" />
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
+<script>
+    var js = jQuery.noConflict(true);
+    js(document).ready(function () {
+        js('#tblReg').DataTable({
+            "searching": true,
+            "scrollY": 355,
+            "paging": true,
+            "ordering": true,
+            "info": true,
+            "responsive": true
+        });
+  
+    });
+
+
+</script>
